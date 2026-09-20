@@ -1,0 +1,26 @@
+# dsh-obsidian-assistant bundle patch
+#
+# 安装：dsh plugin --profile <name> add github:<你的用户名>/dsh-obsidian-assistant
+# 或本地：dsh plugin --profile <name> add <本包路径>
+# 之后重启对应 profile 生效。
+#
+# Host 半提供 'obsbn' Remote 服务（typert），Client 半在 shell.overlay
+# 挂「Obsidian 小助理」悬浮面板。
+#
+# 必改配置：把 vault 改成你的 Obsidian vault 绝对路径。
+# （也可不改本文件，改用环境变量 DSH_OBSIDIAN_VAULT 等，见 README。）
+- insert:
+    - id: obsidian-assistant
+      name: dsh-obsidian-assistant
+      config:
+        # 【必填】你的 Obsidian vault 绝对路径
+        vault: '/path/to/your/obsidian/vault'
+        # 日记目录（vault 内相对路径）；快速笔记会追加到 <journalsDir>/YYYY-MM-DD.md
+        journalsDir: 'raw/journals'
+        # 随机漫步的候选目录前缀（vault 内相对路径）；默认取 journalsDir
+        # walkDirs: ['raw/journals/', 'wiki/']
+        # 「那年今天」要跳过的 wiki/ 子目录名
+        # skipWikiSubdirs: ['lint']
+        # 【可选】语义检索脚本绝对路径（如 llm-wiki-tana 的 semantic_search.py）。
+        # 配置后「找相关笔记」可用；留空则该功能禁用，其余功能不受影响。
+        # semanticScript: '/path/to/semantic_search.py'

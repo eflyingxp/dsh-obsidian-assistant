@@ -1,0 +1,4 @@
+node_modules/
+quicknotes.jsonl
+*.log
+.DS_Store

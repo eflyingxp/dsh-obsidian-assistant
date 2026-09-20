@@ -1,0 +1,36 @@
+{
+  "name": "dsh-obsidian-assistant",
+  "version": "0.1.0",
+  "description": "Obsidian 小助理：那年今天 / 随机漫步 / 快速笔记 / 相关笔记——为 DSH (DeepSeek Harness) web 界面打造的 Obsidian vault 伴读浮窗",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-ui-slots"
+      ],
+      "platform": "web"
+    }
+  },
+  "license": "MIT",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "obsidian",
+    "journal",
+    "daily-notes"
+  ],
+  "dependencies": {
+    "@deepseek-ai/dsh-typert-protocol": "^0.1.0-rc.6"
+  }
+}
