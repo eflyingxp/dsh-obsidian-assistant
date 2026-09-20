@@ -16,7 +16,7 @@
 ## 安装
 
 ```bash
-dsh plugin --profile web add github:<你的用户名>/dsh-obsidian-assistant
+dsh plugin --profile web add github:eflyingxp/dsh-obsidian-assistant
 ```
 
 安装后**必须配置 vault 路径**（见下），然后重启 profile 生效。
