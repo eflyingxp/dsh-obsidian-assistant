@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.2] - 2026-09-24
+
+### Fixed
+
+- 适配 DSH 0.1.7-rc.1 shell API 重构：`shell.run(spec)` 已移除，改为 `shell.execute(spec)` 返回进程句柄、`handle.result()` 取前台结果。新增 `_sh()` 兼容层，自动探测新旧 API，新旧版 DSH 均可运行。修复「那年今天 / 随机漫步 / 找相关笔记」报 `this.ctx.shell.run is not a function` 的问题。
+
 ## 0.1.0 (2026-09-20)
 
 首次公开发布。

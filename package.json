@@ -1,6 +1,6 @@
 {
   "name": "dsh-obsidian-assistant",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Obsidian 小助理：那年今天 / 随机漫步 / 快速笔记 / 相关笔记——为 DSH (DeepSeek Harness) web 界面打造的 Obsidian vault 伴读浮窗",
   "type": "module",
   "main": "lib/index.js",
