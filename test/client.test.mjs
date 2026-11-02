@@ -63,3 +63,24 @@ test("client bundle：可加载并导出 apply/inject，apply 注册 shell.overl
   assert.equal(registration.options.id, "obsidian-assistant");
   assert.equal(typeof registration.component, "function");
 });
+
+test("client bundle：整页模式、主题 token 与展开/收起按钮已内置", async () => {
+  const code = await readFile(new URL("../lib/client.js", import.meta.url), "utf8");
+  for (const marker of [
+    "obsbn-backdrop",
+    "obsbn-page",
+    "obsbn-panel",
+    "obsbn-iconbtn",
+    "obsbn-launcher",
+    "obsbn-textarea",
+    "展开到整页",
+    "收起为浮窗",
+    "--dsw-alias-bg-layer-1",
+    "--dsw-alias-brand-primary",
+  ]) {
+    assert.ok(code.includes(marker), "应包含界面标记：" + marker);
+  }
+  // 旧版内联定位样式应已移除，样式统一走 CSS 类。
+  assert.ok(!code.includes('position: "fixed", right: 20'), "旧版内联浮窗定位应已移除");
+  assert.ok(!code.includes("ZIndex 9999"), "旧版内联 z-index 应已移除");
+});
