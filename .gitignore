@@ -2,3 +2,5 @@ node_modules/
 quicknotes.jsonl
 *.log
 .DS_Store
+.obsbn-cache.json
+.obsbn-cache.json.tmp
